@@ -1,0 +1,26 @@
+{
+  "name": "qa",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "https://github.com/marijuana-mn/qa#readme",
+  "bugs": {
+    "url": "https://github.com/marijuana-mn/qa/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marijuana-mn/qa.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Scott Ballantyne",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.2"
+  }
+}
