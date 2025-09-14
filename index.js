@@ -54,5 +54,6 @@ module.exports.supertest = supertest;
 
 module.exports.jwt = function(obj={}) {
   const token = jwt.sign(obj, process.env.JWT_SECRET, { expiresIn: '1h' });	
-  return { token }
+  
+  return ['token',token]
 }
