@@ -2,7 +2,7 @@ const path = require('path');
 const assert = require('assert');
 const crypto = require('crypto');
 
-
+const jwt = require('jsonwebtoken');
 const supertest = require('supertest');
 const express = require('express');
 
