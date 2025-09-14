@@ -25,8 +25,8 @@ function appInstance(options={}) {
   if (options.render) {
     instance.response.render = require('views/engine')({
       views: [
-	path.join(__dirname, 'apps','hasLayout', 'views'),
-	path.join(__dirname, '..')
+	path.join('views'),
+	path.join(process.cwd())
       ],
       stream: true
     });
