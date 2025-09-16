@@ -7,12 +7,13 @@ if (process.env.NODE_ENV == undefined) {
 }
 
 var files = [path.join(process.cwd(), '.env')]
-var file = path.join(process.cwd(), 'config', '.env.'+process.env.NODE_ENV);
+var file  = path.join(process.cwd(), 'config', '.env.'+process.env.NODE_ENV);
 
 if (fs.existsSync(path.join(file))) {
   files.push(file);
 }
 
 dotenv.config({ path: files, quiet: ['test', 'production'].indexOf(process.env.NODE_ENV) > -1 });
+
 
 
