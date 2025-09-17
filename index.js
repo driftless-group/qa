@@ -10,6 +10,8 @@ const csrf         = require('csurf');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 
+module.exports.supertest   = supertest;
+
 function appInstance(options={}) {
   const instance = express();
 
@@ -49,7 +51,6 @@ function appInstance(options={}) {
 }
 
 module.exports.appInstance = appInstance;
-module.exports.supertest   = supertest;
 module.exports.cookie      = function(obj={}) {
   const token = jwt.sign(obj, process.env.JWT_SECRET, { expiresIn: '1h' });	
   return [['token',token].join('=')+";"]
