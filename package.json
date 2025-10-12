@@ -18,6 +18,7 @@
     "test": "mocha -w"
   },
   "dependencies": {
+    "csurf": "^1.11.0",
     "express": "^5.1.0",
     "handlebars": "^4.7.8",
     "jsonwebtoken": "^9.0.2",
