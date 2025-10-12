@@ -10,6 +10,7 @@ const csrf         = require('csurf');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const { Builder } = require('selenium-webdriver');
+const { Cookie } = require('selenium-webdriver/lib/cookie');
 const chrome = require('selenium-webdriver/chrome');
 
 module.exports.drive = function(options={}) {
@@ -72,7 +73,8 @@ module.exports.cookie      = function(obj={}, options={}) {
   const token = jwt.sign(obj, process.env.JWT_SECRET, { expiresIn: '1h' });	
   
   if (options.webdriver) {
-    return {name: 'token', value: token, domain: 'localhost'};
+    let cookie = new Cookie('token', token, 'localhost', '/', null);
+    return cookie;
   } else {
     return [['token',token].join('=')+";"]
   }
