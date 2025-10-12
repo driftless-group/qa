@@ -10,6 +10,18 @@ const csrf         = require('csurf');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 
+
+module.exports.drive = function(options={}) {
+  const options = new chrome.Options().addArguments('--headless');
+  const driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
+  
+  if (options.cookies != undefined) {
+    driver.manage().addCookie(options.cookies);
+  }
+
+  return driver;
+}
+
 module.exports.supertest   = supertest;
 
 function appInstance(options={}) {
