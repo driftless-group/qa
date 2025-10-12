@@ -10,7 +10,6 @@ const csrf         = require('csurf');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const { Builder } = require('selenium-webdriver');
-const { Cookie } = require('selenium-webdriver/lib/cookie');
 const chrome = require('selenium-webdriver/chrome');
 
 module.exports.drive = function(options={}) {
