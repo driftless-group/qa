@@ -64,9 +64,18 @@ function appInstance(options={}) {
 }
 
 module.exports.appInstance = appInstance;
-module.exports.cookie      = function(obj={}) {
+module.exports.cookie      = function(obj={}, options={}) {
+  if (options.token == undefined) {
+    options.token = false;
+  }
+
   const token = jwt.sign(obj, process.env.JWT_SECRET, { expiresIn: '1h' });	
-  return [['token',token].join('=')+";"]
+  
+  if (options.token) {
+    return token;
+  } else {
+    return [['token',token].join('=')+";"]
+  }
 }
 
 
