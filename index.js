@@ -25,6 +25,8 @@ module.exports.drive = function(options={}) {
       return cs
     }, []);
 
+    console.log(options.cookie);
+
     while(options.cookies.length > 0) {
       driver.manage().addCookie(options.cookies.unshift);
     }
