@@ -15,21 +15,9 @@ const chrome = require('selenium-webdriver/chrome');
 module.exports.drive = function(options={}) {
   const opts = new chrome.Options().addArguments('--headless');
   const driver = new Builder().forBrowser('chrome').setChromeOptions(opts).build();
-  
-  if (options.cookies != undefined) {
-    options.cookies = Object.keys(options.cookies).reduce((cs, key) => {
-      var newObj = {};
-      newObj.name = key;
-      newObj.value = options.cookies[key];
-      cs.push(newObj);
-      return cs
-    }, []);
-
-    console.log(options.cookie);
-
-    while(options.cookies.length > 0) {
-      driver.manage().addCookie(options.cookies.unshift);
-    }
+ 
+  if (options.cookie) {
+    driver.manage().addCookie(options.cookie);
   }
 
   return driver;
