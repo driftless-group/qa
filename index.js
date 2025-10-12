@@ -12,8 +12,8 @@ const bodyParser   = require('body-parser');
 
 
 module.exports.drive = function(options={}) {
-  const options = new chrome.Options().addArguments('--headless');
-  const driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
+  const opts = new chrome.Options().addArguments('--headless');
+  const driver = new Builder().forBrowser('chrome').setChromeOptions(opts).build();
   
   if (options.cookies != undefined) {
     driver.manage().addCookie(options.cookies);
