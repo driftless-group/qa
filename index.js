@@ -9,7 +9,8 @@ const express      = require('express');
 const csrf         = require('csurf');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
-
+const { Builder } = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
 
 module.exports.drive = function(options={}) {
   const opts = new chrome.Options().addArguments('--headless');
