@@ -65,14 +65,14 @@ function appInstance(options={}) {
 
 module.exports.appInstance = appInstance;
 module.exports.cookie      = function(obj={}, options={}) {
-  if (options.token == undefined) {
-    options.token = false;
+  if (options.webdriver == undefined) {
+    options.webdriver = false;
   }
 
   const token = jwt.sign(obj, process.env.JWT_SECRET, { expiresIn: '1h' });	
   
-  if (options.token) {
-    return token;
+  if (options.webdriver) {
+    return {name: 'token', value: token, domain: 'localhost'};
   } else {
     return [['token',token].join('=')+";"]
   }
