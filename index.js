@@ -73,7 +73,7 @@ module.exports.cookie      = function(obj={}, options={}) {
   const token = jwt.sign(obj, process.env.JWT_SECRET, { expiresIn: '1h' });	
   
   if (options.webdriver) {
-    let cookie = new Cookie('token', token, 'localhost', '/', null);
+    let cookie = {name: 'token', value: token, domain: 'localhost', path: '/'};
     return cookie;
   } else {
     return [['token',token].join('=')+";"]
