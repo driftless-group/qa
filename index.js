@@ -13,7 +13,15 @@ const { Builder } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 
 module.exports.drive = function(options={}) {
-  const opts = new chrome.Options().addArguments('--headless');
+  if (options.headless == undefined) {
+    options.headless = true;
+  }
+
+  let opts = new chrome.Options()
+ 
+  if (options.headless == true) {
+    opts.addArguments('--headless');
+  }
   const driver = new Builder().forBrowser('chrome').setChromeOptions(opts).build();
  
   if (options.cookie) {
@@ -21,6 +29,7 @@ module.exports.drive = function(options={}) {
   }
 
   return driver;
+
 }
 
 module.exports.supertest   = supertest;
