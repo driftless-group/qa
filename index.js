@@ -17,7 +17,17 @@ module.exports.drive = function(options={}) {
   const driver = new Builder().forBrowser('chrome').setChromeOptions(opts).build();
   
   if (options.cookies != undefined) {
-    driver.manage().addCookie(options.cookies);
+    options.cookies = Object.keys(options.cookies).reduce((cs, key) => {
+      var newObj = {};
+      newObj.name = key;
+      newObj.value = options.cookies[key];
+      cs.push(newObj);
+      return cs
+    }, []);
+
+    while(options.cookies.length > 0) {
+      driver.manage().addCookie(options.cookies.unshift);
+    }
   }
 
   return driver;
