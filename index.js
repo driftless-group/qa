@@ -14,7 +14,7 @@ const chrome = require('selenium-webdriver/chrome');
 
 
 module.exports.wait = function() {
-  return new Promise(resolve) function() { 
+  return new Promise(function(resolve) { 
     setTimeout(resolve, milliseconds)
   });
 }
