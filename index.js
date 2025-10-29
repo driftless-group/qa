@@ -12,6 +12,13 @@ const bodyParser   = require('body-parser');
 const { Builder } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 
+
+module.exports.wait = function() {
+  return new Promise(resolve) function() { 
+    setTimeout(resolve, milliseconds)
+  });
+}
+
 module.exports.drive = function(options={}) {
   if (options.headless == undefined) {
     options.headless = true;
