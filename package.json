@@ -1,14 +1,14 @@
 {
-  "name": "qa",
+  "name": "@driftless-group/qa",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://github.com/marijuana-mn/qa#readme",
+  "homepage": "https://github.com/driftless-group/qa#readme",
   "bugs": {
-    "url": "https://github.com/marijuana-mn/qa/issues"
+    "url": "https://github.com/driftless-group/qa/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marijuana-mn/qa.git"
+    "url": "git+https://github.com/driftless-group/qa.git"
   },
   "license": "UNLICENSED",
   "author": "Scott Ballantyne",
