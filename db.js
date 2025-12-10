@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const path = require('path');
-require('qa/env')
+require(path.join(__dirname, '..', 'env')
 
 
 mongoose.connect(process.env.MONGO_URL).
