@@ -2,6 +2,8 @@ const path = require('path');
 const fs   = require('fs');
 var dotenv = require('dotenv');
 
+console.log('environment', process.env.NODE_ENV);
+
 if (process.env.NODE_ENV == undefined) {
   process.env.NODE_ENV = 'development';
 }
@@ -13,6 +15,6 @@ if (fs.existsSync(path.join(file))) {
   files.push(file);
 }
 
-dotenv.config({ path: files, quiet: ['test', 'production'].indexOf(process.env.NODE_ENV) > -1 });
+dotenv.config({ path: files, quiet: (['test', 'production'].indexOf(process.env.NODE_ENV) > -1) });
 
 
