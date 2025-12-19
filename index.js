@@ -53,7 +53,7 @@ function appInstance(options={}) {
   }
 
   if (options.render) {
-    instance.response.render = require('views/engine')({
+    instance.response.render = require('@drifted/views/engine')({
       views: [
         path.join(process.cwd(), 'views'),
         path.join(process.cwd(), 'node_modules', 'views')
