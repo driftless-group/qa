@@ -7,9 +7,9 @@
 
 ## Create a Quick App For Testing
 ```javascript
-  var app = appInstance({csrf: true}), 
-  driver = drive({headless: false});
-  
+  const { appInstance } = require('@drifted/qa');
+  var app = appInstance({csrf: true})
+ 
   app.response.render = require('@drifted/views/engine')({
     views: [
       path.join(__dirname, 'views'),
@@ -23,6 +23,4 @@
       path.join(__dirname, '..', 'node_modules', '@drifted', 'assets', 'public')
     ]
   }));
-
-  app.use(require(path.join(__dirname, '..', "routes")));
 ```
