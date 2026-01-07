@@ -5,7 +5,7 @@
   npm install @drifted/qa --save-dev
 ```
 
-## Create a Quick App For Testing
+### Create a Quick App For Testing
 ```javascript
   const { appInstance } = require('@drifted/qa');
   var app = appInstance({csrf: true})
