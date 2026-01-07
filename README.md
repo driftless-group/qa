@@ -1,9 +1,12 @@
 # qa
 
 
+### Install
 ```bash
   npm install @drifted/qa --save-dev
 ```
+
+## Usage
 
 ### Create a Quick App For Testing
 ```javascript
