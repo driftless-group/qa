@@ -13,6 +13,13 @@ const { Builder } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 
 
+module.exports.doneMessage = function(done) {
+  return function (error) {
+    console.log(error);
+    done();
+  }
+}
+
 module.exports.wait = function(milliseconds) {
   return new Promise(function(resolve) { 
     setTimeout(resolve, milliseconds)
