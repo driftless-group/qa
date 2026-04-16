@@ -9,8 +9,8 @@ const express      = require('express');
 const csrf         = require('csurf');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
-const { Builder } = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
+const { Builder }  = require('selenium-webdriver');
+const chrome       = require('selenium-webdriver/chrome');
 
 
 module.exports.doneMessage = function(done) {
@@ -46,7 +46,7 @@ module.exports.drive = function(options={}) {
 
 }
 
-module.exports.supertest   = supertest;
+module.exports.supertest = supertest;
 
 function appInstance(options={}) {
   const instance = express();
@@ -60,10 +60,10 @@ function appInstance(options={}) {
   }
 
   if (options.render) {
-    instance.response.render = require('@drifted/views/engine')({
+    instance.response.render = require('@drifted/engine')({
       views: [
         path.join(process.cwd(), 'views'),
-        path.join(process.cwd(), 'node_modules', 'views')
+        path.join(process.cwd(), 'test', 'views')
       ],
       stream: true
     });
