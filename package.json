@@ -1,7 +1,7 @@
 {
   "name": "@drifted/qa",
-  "version": "0.0.12",
-  "description": "",
+  "version": "0.0.14",
+  "description": "this is sort of meant to be like test helpers that are default in rails.  just stuff I normally use that allows me to test quickly.",
   "homepage": "https://github.com/driftless-group/qa#readme",
   "bugs": {
     "url": "https://github.com/driftless-group/qa/issues"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/driftless-group/qa.git"
   },
-  "license": "UNLICENSED",
+  "license": "GPL-3.0",
   "author": "Scott Ballantyne",
   "type": "commonjs",
   "main": "index.js",
