@@ -13,12 +13,14 @@ const { Builder }  = require('selenium-webdriver');
 const chrome       = require('selenium-webdriver/chrome');
 
 
-module.exports.doneMessage = function(done) {
+function doneMessage(done) {
   return function (error) {
     console.log(error);
     done();
   }
 }
+module.exports.doneMessage = doneMessage;
+module.exports.exception = doneMessage;
 
 module.exports.wait = function(milliseconds) {
   return new Promise(function(resolve) { 

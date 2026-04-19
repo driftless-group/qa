@@ -1,6 +1,6 @@
 {
   "name": "@drifted/qa",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "this is sort of meant to be like test helpers that are default in rails.  just stuff I normally use that allows me to test quickly.",
   "homepage": "https://github.com/driftless-group/qa#readme",
   "bugs": {
