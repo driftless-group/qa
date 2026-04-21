@@ -16,7 +16,7 @@ const chrome       = require('selenium-webdriver/chrome');
 function freshGoose() {
   return new Promise((resolve) => {
     var names = Object.keys(mongoose.models);
-    while(modelNames.length > 0) {
+    while(names.length > 0) {
       var name = names.pop();
       delete mongoose.models[name]
     }
