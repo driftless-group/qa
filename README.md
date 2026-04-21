@@ -21,7 +21,7 @@
     stream: true
   });
 
-  app.use(require('@drifted/assets/static')({
+  app.use(require('@drifted/static')({
     path: [
       path.join(__dirname, '..', 'node_modules', '@drifted', 'assets', 'public')
     ]
