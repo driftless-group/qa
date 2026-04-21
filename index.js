@@ -7,7 +7,6 @@ const jwt          = require('jsonwebtoken');
 const supertest    = require('supertest');
 const express      = require('express');
 
-const csrf         = require('csurf');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const { Builder }  = require('selenium-webdriver');
@@ -68,12 +67,16 @@ module.exports.supertest = supertest;
 function appInstance(options={}) {
   const instance = express();
 
+  if (options.csrf == undefined) {
+    options.csrf = false;
+  }
+
   if (options.render == undefined) {
-    options.render = true
+    options.render = true;
   }
 
   if (options.parse == undefined) {
-    options.parse = true
+    options.parse = true;
   }
 
   if (options.render) {
@@ -93,6 +96,7 @@ function appInstance(options={}) {
   }
 
   if (options.csrf) {
+    const csrf = require('csurf');
     instance.use(csrf({cookie: true}));
     instance.use(function(req, res, next) {
       res.locals.csrfToken = req.csrfToken();

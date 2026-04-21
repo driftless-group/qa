@@ -1,6 +1,6 @@
 {
   "name": "@drifted/qa",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "this is sort of meant to be like test helpers that are default in rails.  just stuff I normally use that allows me to test quickly.",
   "homepage": "https://github.com/driftless-group/qa#readme",
   "bugs": {
@@ -20,7 +20,6 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "cookie-parser": "^1.4.7",
-    "csurf": "^1.11.0",
     "express": "^5.1.0",
     "handlebars": "^4.7.8",
     "jsonwebtoken": "^9.0.2",
