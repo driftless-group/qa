@@ -1,6 +1,7 @@
 const path         = require('path');
 const assert       = require('assert');
 const crypto       = require('crypto');
+const mongoose     = require('mongoose');
 
 const jwt          = require('jsonwebtoken');
 const supertest    = require('supertest');

@@ -1,6 +1,6 @@
 {
   "name": "@drifted/qa",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "this is sort of meant to be like test helpers that are default in rails.  just stuff I normally use that allows me to test quickly.",
   "homepage": "https://github.com/driftless-group/qa#readme",
   "bugs": {
@@ -24,6 +24,7 @@
     "express": "^5.1.0",
     "handlebars": "^4.7.8",
     "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.5.0",
     "selenium-webdriver": "^4.36.0",
     "supertest": "^7.1.4"
   },
