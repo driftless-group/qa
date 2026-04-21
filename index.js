@@ -12,6 +12,20 @@ const bodyParser   = require('body-parser');
 const { Builder }  = require('selenium-webdriver');
 const chrome       = require('selenium-webdriver/chrome');
 
+function freshGoose() {
+  return new Promise((resolve) => {
+    var names = Object.keys(mongoose.models);
+    while(modelNames.length > 0) {
+      var name = names.pop();
+      delete mongoose.models[name]
+    }
+
+    resolve();
+  })
+}
+module.exports.refresh = freshGoose;
+
+
 
 function doneMessage(done) {
   return function (error) {
