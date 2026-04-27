@@ -124,4 +124,9 @@ module.exports.cookie      = function(obj={}, options={}) {
 }
 
 
+module.exports.bearer      = function(obj={}, options={}) {
+  const token = jwt.sign(obj, process.env.JWT_SECRET, { expiresIn: '1h' });	
+  return ['Bearer', token].join(' ');  
+}
+
 
